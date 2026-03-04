@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popeyes Main Course</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                 <img src="image./popeyes.png" alt="Popeyes Logo" class="logo-img">
+                 <span class="logo-text">Popeyes</span>
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Main Course</a></li>
+                <li><a href="desserts.html">Dessert</a></li>
+                <li><a href="drinks.html">Drinks</a></li>
+            </ul>
+
+            <div class="navbar-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    <header class="menu-header">
+        <h1>Main Course</h1>
+    </header>
+
+<div class="main-container">
+    <main class="menu-grid">
+        <div class="menu-item" onclick="openModal('US Spicy Chicken', 175)">
+            <div class="image-wrapper">
+                <img src="image/us_spicychick.png" alt="US BURGER Chicken">
+            </div>
+            <div class="item-details">
+                <h4>US Spicy Chicken</h4>
+                <p>A boneless breast of chicken seasoned to perfection, hand-breaded, and served on a toasted bun.</p>
+                <span class="price">₱175.00</span>
+            </div>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Fish Burger', 155)">
+            <div class="image-wrapper">
+                <img src="image/fish_burger.png" alt="Fish Burger">
+            </div>
+            <div class="item-details">
+                <h4>Fish Burger</h4>
+                <p>A boneless breast of fish, seasoned to perfection, hand-breaded, and served on a toasted, buttered bun.</p>
+                <span class="price">₱155.00</span>
+            </div>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Fried Chicken', 105)">
+            <div class="image-wrapper">
+                <img src="image/chicken.png" alt="Fried Chicken">
+            </div>
+            <div class="item-details">
+                <h4>Fried Chicken</h4>
+                <p>Our signature chicken, seasoned to perfection, hand-breaded, and served with your choice of dipping sauce.</p>
+                <span class="price">₱105.00</span>
+            </div>
+        </div>
+    </main>
+
+    <aside class="receipt-section">
+        <h2>Your Receipt</h2>
+        <div id="receipt-items">
+            <p>Your tray is empty.</p>
+        </div>
+        <hr>
+        <div class="checkout-controls">
+            <input type="number" id="userAge" placeholder="Enter Age" min="10" max="100">
+            <button onclick="computeTotal()" class="order-btn">Compute Total</button>
+        </div>
+        <div id="final-summary" class="summary-box"></div>
+    </aside>
+</div>
+<div id="qtyModal" class="modal">
+    <div class="modal-content">
+        <h3 id="modalItemName"></h3>
+        <label for="itemQty">Quantity:</label>
+        <input type="number" id="itemQty" min="1" max="50" value="1" >
+        <button onclick="addToCart()">Add to Cart</button>
+        <button onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

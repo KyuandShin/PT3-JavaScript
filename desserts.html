@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popeyes Dessert</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                 <img src="image/popeyes.png" alt="Popeyes Logo" class="logo-img">
+                 <span class="logo-text">Popeyes</span>
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Main Course</a></li>
+                <li><a href="desserts.html">Dessert</a></li>
+                <li><a href="drinks.html">Drinks</a></li>
+            </ul>
+
+            <div class="navbar-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="menu-header">
+        <h1>Desserts</h1>
+    </header>
+
+    <div class="main-container">
+        <main class="menu-grid">
+            <div class="menu-item" onclick="openModal('Biscoff Sundae', 99)">
+                <div class="image-wrapper">
+                    <img src="image/biscoff_sundae.png" alt="Biscoff Sundae">
+                </div>
+                <div class="item-details">
+                    <h4>Biscoff Sundae</h4>
+                    <p>A delicious sundae made with Biscoff cookies, vanilla ice cream, and caramel sauce.</p>
+                    <span class="price">₱99.00</span>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('Fluffy Pancake A La Mode', 109)">
+                <div class="image-wrapper">
+                    <img src="image/pancake.png" alt="Pancake">
+                </div>
+                <div class="item-details">
+                    <h4>Fluffy Pancake A La Mode</h4>
+                    <p>A fluffy pancake served with syrup and butter.</p>
+                    <span class="price">₱109.00</span>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('Sundae', 65)">
+                <div class="image-wrapper">
+                    <img src="image/sundae.png" alt="Sundae">
+                </div>
+                <div class="item-details">
+                    <h4>Sundae</h4>
+                    <p>A delicious sundae made with vanilla ice cream and various toppings.</p>
+                    <span class="price">₱65.00</span>
+                </div>
+            </div>
+        </main>
+
+        <aside class="receipt-section">
+            <h2>Your Receipt</h2>
+            <div id="receipt-items">
+                <p class="empty-message">Your tray is empty.</p>
+            </div>
+            <hr>
+            <div class="error-message" id="ageError"></div>
+            <div class="checkout-controls">
+                <input type="number" id="userAge" placeholder="Enter Age" min="10" max="100">
+                <button onclick="computeTotal()" class="order-btn">Compute Total</button>
+            </div>
+            <div id="final-summary" class="summary-box"></div>
+        </aside>
+    </div>
+
+    <div id="qtyModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalItemName"></h3>
+            <label for="itemQty">Quantity:</label>
+            <input type="number" id="itemQty" min="1" max="50" value="1">
+            <div class="modal-buttons">
+                <button class="add-btn" onclick="addToCart()">Add to Cart</button>
+                <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

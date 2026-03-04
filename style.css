@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    min-height: 100vh;
+    background-color: #ffc72c; 
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: #ff8103; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 50px; 
+    max-width: 1200px;
+}
+
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    line-height: 1;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+    color: #2d1b2d;
+    background: #ff4167; 
+}
+
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: white;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.logo-img {
+    height: 50px; 
+    width: auto;
+    display: block;
+}
+
+.menu-header {
+    text-align: center;
+    padding: 40px 0 20px;
+    color: #2d1b2d;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; 
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 200px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-wrapper img {
+    max-height: 80%;
+    max-width: 80%;
+    object-fit: contain;
+}
+
+.item-details {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-details h4 {
+    color: #ff8103;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.item-details p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #2d1b2d;
+}
+
+
+.logo-img { 
+    height: 45px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background: white;
+    margin: 15% auto;
+    padding: 25px;
+    width: 280px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.receipt-section {
+    background: #fff;
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 2px dashed #333;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.receipt-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.summary-box {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f1f1f1;
+    display: none;
+}
+
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+
+.menu-grid {
+    flex: 3; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.image-wrapper {
+    background: #fdfdfd;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.item-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.item-details h4 {
+    color: #ff8103;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.item-details p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.price {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #2d1b2d;
+}
+
+
+.receipt-section {
+    flex: 1; 
+    min-width: 320px;
+    background: #fff;
+    padding: 25px;
+    border: 2px dashed #ff8103;
+    border-radius: 10px;
+    position: sticky;
+    top: 100px;
+}
+
+.modal.show {
+    display: block;
+}
+
+#qtyModal button {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    background: #ff8103;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#qtyModal button:hover {
+    background: #ff4167;
+}
+
+#qtyModal input {
+    display: block;
+    margin: 15px auto;
+    padding: 8px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#qtyModal label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
