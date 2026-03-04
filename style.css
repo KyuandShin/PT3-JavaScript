@@ -35,7 +35,6 @@ nav {
     max-width: 1200px;
 }
 
-
 .navbar-logo {
     display: flex;
     align-items: center;
@@ -80,6 +79,8 @@ nav {
 .navbar-toggle {
     display: none;
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .bar {
@@ -91,132 +92,11 @@ nav {
     transition: all 0.3s ease-in-out;
 }
 
-
-.logo-img {
-    height: 50px; 
-    width: auto;
-    display: block;
-}
-
 .menu-header {
     text-align: center;
     padding: 40px 0 20px;
     color: #2d1b2d;
 }
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.menu-item {
-    background: #fff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer; 
-    display: flex;
-    flex-direction: column;
-}
-
-.menu-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.image-wrapper {
-    width: 100%;
-    height: 200px;
-    background: #f4f4f4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.image-wrapper img {
-    max-height: 80%;
-    max-width: 80%;
-    object-fit: contain;
-}
-
-.item-details {
-    padding: 20px;
-    text-align: center;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.item-details h4 {
-    color: #ff8103;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-
-.item-details p {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.4;
-    margin-bottom: 15px;
-}
-
-.price {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #2d1b2d;
-}
-
-
-.logo-img { 
-    height: 45px;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-}
-
-.modal-content {
-    background: white;
-    margin: 15% auto;
-    padding: 25px;
-    width: 280px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.receipt-section {
-    background: #fff;
-    max-width: 450px;
-    margin: 30px auto;
-    padding: 20px;
-    border: 2px dashed #333;
-    border-radius: 4px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.receipt-entry {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-}
-
-.summary-box {
-    margin-top: 15px;
-    padding: 10px;
-    background: #f1f1f1;
-    display: none;
-}
-
 
 .main-container {
     display: flex;
@@ -226,14 +106,16 @@ nav {
     max-width: 1400px;
     margin: 0 auto;
     align-items: flex-start;
+    width: 100%;
 }
-
 
 .menu-grid {
     flex: 3; 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
+    width: 100%;
+    min-width: 280px;
 }
 
 .menu-item {
@@ -244,6 +126,12 @@ nav {
     flex-direction: column;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .image-wrapper {
@@ -264,6 +152,10 @@ nav {
 .item-details {
     padding: 20px;
     text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .item-details h4 {
@@ -286,48 +178,282 @@ nav {
     color: #2d1b2d;
 }
 
+/* Modal Styles */
+#qtyModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-content h3 {
+    color: #ff8103;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.modal-content input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: #ff8103;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.add-btn {
+    background: #ff8103;
+    color: white;
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.add-btn:hover {
+    background: #ff4167;
+}
+
+.cancel-btn {
+    background: #ddd;
+    color: #333;
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background: #ccc;
+}
+
+/* Receipt Section */
 .receipt-section {
     flex: 1; 
-    min-width: 320px;
+    min-width: 300px;
     background: #fff;
     padding: 25px;
-    border: 2px dashed #ff8103;
-    border-radius: 10px;
+    border: 3px solid #ff8103;
+    border-radius: 15px;
     position: sticky;
     top: 100px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
-.modal.show {
-    display: block;
+.receipt-section h2 {
+    color: #ff8103;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
 }
 
-#qtyModal button {
-    margin: 10px 5px;
-    padding: 10px 20px;
+#receipt-items {
+    min-height: 100px;
+}
+
+.receipt-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+    align-items: center;
+    gap: 10px;
+}
+
+.receipt-entry span:first-child {
+    color: #333;
+    flex: 1;
+}
+
+.receipt-entry span:nth-child(2) {
+    color: #ff8103;
+    font-weight: bold;
+}
+
+.empty-message {
+    color: #999;
+    font-style: italic;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.checkout-controls {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkout-controls input {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.checkout-controls input:focus {
+    outline: none;
+    border-color: #ff8103;
+}
+
+.order-btn {
+    padding: 12px;
     background: #ff8103;
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
 }
 
-#qtyModal button:hover {
+.order-btn:hover {
     background: #ff4167;
 }
 
-#qtyModal input {
-    display: block;
-    margin: 15px auto;
-    padding: 8px;
-    width: 80%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+#final-summary {
+    display: none;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border-left: 4px solid #ff8103;
 }
 
-#qtyModal label {
-    display: block;
+#final-summary p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+#final-summary h3 {
+    color: #ff8103;
     margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.error-message {
+    color: #d32f2f;
+    background: #ffebee;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: none;
     font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.clear-cart-btn {
+    padding: 10px;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+.clear-cart-btn:hover {
+    background: #b71c1c;
+}
+
+.summary-box {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f1f1f1;
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .menu-grid {
+        flex: 1;
+    }
+
+    .receipt-section {
+        position: relative;
+        top: 0;
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 20px;
+    }
+
+    .navbar-logo {
+        font-size: 1.2rem;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .receipt-section {
+        min-width: 100%;
+    }
 }

@@ -10,8 +10,8 @@
 
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">
-                 <img src="image./popeyes.png" alt="Popeyes Logo" class="logo-img">
+            <a href="./index.html" class="navbar-logo">
+                 <img src="image/popeyes.png" alt="Popeyes Logo" class="logo-img">
                  <span class="logo-text">Popeyes</span>
             </a>
             <ul class="navbar-menu">
@@ -35,7 +35,7 @@
     <main class="menu-grid">
         <div class="menu-item" onclick="openModal('US Spicy Chicken', 175)">
             <div class="image-wrapper">
-                <img src="image/us_spicychick.png" alt="US BURGER Chicken">
+                <img src="image/us_spicychick.png" alt="US Spicy Chicken">
             </div>
             <div class="item-details">
                 <h4>US Spicy Chicken</h4>
@@ -70,25 +70,32 @@
     <aside class="receipt-section">
         <h2>Your Receipt</h2>
         <div id="receipt-items">
-            <p>Your tray is empty.</p>
+            <p class="empty-message">Your tray is empty.</p>
         </div>
         <hr>
+        <div class="error-message" id="ageError"></div>
         <div class="checkout-controls">
             <input type="number" id="userAge" placeholder="Enter Age" min="10" max="100">
             <button onclick="computeTotal()" class="order-btn">Compute Total</button>
+            <button onclick="clearCart()" class="clear-cart-btn">Clear Cart</button>
         </div>
         <div id="final-summary" class="summary-box"></div>
     </aside>
 </div>
+
 <div id="qtyModal" class="modal">
     <div class="modal-content">
         <h3 id="modalItemName"></h3>
         <label for="itemQty">Quantity:</label>
-        <input type="number" id="itemQty" min="1" max="50" value="1" >
-        <button onclick="addToCart()">Add to Cart</button>
-        <button onclick="closeModal()">Cancel</button>
+        <input type="number" id="itemQty" min="1" max="50" value="1">
+        <div class="error-message" id="qtyError"></div>
+        <div class="modal-buttons">
+            <button class="add-btn" onclick="addToCart()">Add to Cart</button>
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+        </div>
     </div>
 </div>
-    <script src="script.js"></script>
+
+    <script src="./script.js"></script>
 </body>
 </html>
